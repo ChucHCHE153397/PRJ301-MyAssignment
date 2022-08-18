@@ -14,6 +14,20 @@ public class Employee {
     private int id;
     private String name;
     private ArrayList<Working> workings = new ArrayList<>();
+    
+    public int getNumberOfWorkingDays()
+    {
+        return workings.size();
+    }
+    
+    public float getNumberOfWorkingHours()
+    {
+        float sum = 0;
+        for (Working working : workings) {
+            sum+= working.getWorkingHours();
+        }
+        return sum;
+    }
 
     public int getId() {
         return id;
