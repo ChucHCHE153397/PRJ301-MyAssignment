@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author hacon
  */
-public class Working {
+public class TimeSheet {
     private int id;
     private Employee employee;
     private Date checkin;

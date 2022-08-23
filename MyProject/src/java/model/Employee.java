@@ -13,20 +13,46 @@ import java.util.ArrayList;
 public class Employee {
     private int id;
     private String name;
-    private ArrayList<Working> workings = new ArrayList<>();
+    private ArrayList<TimeSheet> timesheets = new ArrayList<>();
+    private ArrayList<RequestForLeave> leaves = new ArrayList<>();
+
+    public ArrayList<RequestForLeave> getLeaves() {
+        return leaves;
+    }
+    public int getTotalLeaves()
+    {
+        int sum = 0;
+        for (RequestForLeave leave : leaves) {
+            sum+=leave.getTotalDays();
+        }
+        return sum;
+    }
+
+    public void setLeaves(ArrayList<RequestForLeave> leaves) {
+        this.leaves = leaves;
+    }
+    
     
     public int getNumberOfWorkingDays()
     {
-        return workings.size();
+        return timesheets.size();
     }
     
     public float getNumberOfWorkingHours()
     {
         float sum = 0;
-        for (Working working : workings) {
-            sum+= working.getWorkingHours();
+        for (TimeSheet timesheet : timesheets) {
+            sum+= timesheet.getWorkingHours();
         }
         return sum;
+    }
+    
+    public ArrayList<TimeSheet> getTimesheets() {
+        return timesheets;
+    }
+
+    public void setTimesheets(ArrayList<TimeSheet> timesheets) {
+        this.timesheets = timesheets;
     }
 
     public int getId() {
@@ -44,15 +70,5 @@ public class Employee {
     public void setName(String name) {
         this.name = name;
     }
-
-    public ArrayList<Working> getWorkings() {
-        return workings;
-    }
-
-    public void setWorkings(ArrayList<Working> workings) {
-        this.workings = workings;
-    }
-    
-    
     
 }
