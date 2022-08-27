@@ -6,21 +6,24 @@ package model;
 
 import helper.DateTimeHelper;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
- * @author hacon
+ * @author Ngo Tung Son
  */
 public class TimeSheet {
     private int id;
     private Employee employee;
     private Date checkin;
     private Date checkout;
-    private Date cidate;
     
+    private Date cidate;
+
     public Date getCidate() {
         return DateTimeHelper.removeTime(checkin);
     }
+
 
     public int getId() {
         return id;
@@ -53,12 +56,7 @@ public class TimeSheet {
     public void setCheckout(Date checkout) {
         this.checkout = checkout;
     }
-
-   
-
-    public void setCidate(Date cidate) {
-        this.cidate = cidate;
-    }
+    
     public float getWorkingHours()
     {
         if(checkout != null)

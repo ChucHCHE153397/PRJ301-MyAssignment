@@ -60,17 +60,6 @@ public class EmployeeDBContext extends DBContext {
         } catch (SQLException ex) {
             Logger.getLogger(EmployeeDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        RequestForLeave leave = new RequestForLeave();
-        leave.setId(1);
-        leave.setReason(1);
-        leave.setEmployee(employees.get(1));
-        Date d = new Date();
-        d = DateTimeHelper.removeTime(d);
-        leave.setFrom(DateTimeHelper.addDays(d, 3));
-        leave.setTo(DateTimeHelper.addDays(d, 5));
-        employees.get(1).getLeaves().add(leave);
-        
         return employees;
     }
 }

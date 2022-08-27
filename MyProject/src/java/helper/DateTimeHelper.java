@@ -11,17 +11,20 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+
 /**
  *
- * @author hacon
+ * @author Ngo Tung Son
  */
 public class DateTimeHelper {
+
     public static int getDayOfMonth(Date datetime) {
         LocalDate localDate = datetime.toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate();
         return localDate.getDayOfMonth();
     }
+    
     public static Timestamp getTimeStamp(Date date)
     {
         return new Timestamp(date.getTime());
@@ -81,4 +84,5 @@ public class DateTimeHelper {
     {
         return new Date(ts.getTime());
     }
+
 }

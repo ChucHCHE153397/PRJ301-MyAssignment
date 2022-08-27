@@ -8,30 +8,12 @@ import java.util.ArrayList;
 
 /**
  *
- * @author hacon
+ * @author Ngo Tung Son
  */
 public class Employee {
     private int id;
     private String name;
     private ArrayList<TimeSheet> timesheets = new ArrayList<>();
-    private ArrayList<RequestForLeave> leaves = new ArrayList<>();
-
-    public ArrayList<RequestForLeave> getLeaves() {
-        return leaves;
-    }
-    public int getTotalLeaves()
-    {
-        int sum = 0;
-        for (RequestForLeave leave : leaves) {
-            sum+=leave.getTotalDays();
-        }
-        return sum;
-    }
-
-    public void setLeaves(ArrayList<RequestForLeave> leaves) {
-        this.leaves = leaves;
-    }
-    
     
     public int getNumberOfWorkingDays()
     {
